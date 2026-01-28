@@ -33,13 +33,14 @@ time.sleep(2)
 while True:
     try:
         user = int(input("\nEnter number 0 for 'Snake 🐍', 1 for 'Water 💧', 2 for 'Gun 🔫': ").strip())
-        if user not in [0, 1, 2]:
-            time.sleep(1)
-            print(f"{RED}Invalid Choice! Enter 0, 1, or 2 only.{RESET}")
-            continue
     except ValueError:
         time.sleep(1)
         print(f"{RED}Please enter valid number (0, 1, 2).{RESET}")
+        continue
+
+    if user not in (0, 1, 2):
+        time.sleep(1)
+        print(f"{RED}Invalid Choice! Enter 0, 1, or 2 only.{RESET}")
         continue
 
     print(f"{RED}🤖 Computer is thinking", end=" ", flush=True)
